@@ -4,8 +4,8 @@
     font-size: 25px;
     border: solid 3px;
     padding: 20px;
-    margin-left: 700px;
-    margin-right: 700px;
+    margin: 1vw auto;
+    width: 50%;
     text-align: justify;
 }
 .h3 {
@@ -15,13 +15,16 @@
     box-shadow: 0 0 30px 0;
     border-top: solid gray;
     border-bottom: solid gray;
-    font-size: 30px;
-    margin-left: 500px;
-    margin-right: 500px;
+    font-size: 60px;
+    margin: 1vw auto;
+    width: 50%;
 }
 .h4 {
     color: gray;
-    border-left: solid gray;
-    border-right: solid gray;
+    border-top: solid gray;
+    border-bottom: solid gray;
     font-size: 35px;
+}
+.h1 {
+    color:gray;
 }
