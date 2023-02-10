@@ -1,0 +1,27 @@
+.p {
+    color : gray ;
+    background-color: black;
+    font-size: 25px;
+    border: solid 3px;
+    padding: 20px;
+    margin-left: 700px;
+    margin-right: 700px;
+    text-align: justify;
+}
+.h3 {
+    color : gray ;
+    background-color: black;
+    padding: 2px;
+    box-shadow: 0 0 30px 0;
+    border-top: solid gray;
+    border-bottom: solid gray;
+    font-size: 30px;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+.h4 {
+    color: gray;
+    border-left: solid gray;
+    border-right: solid gray;
+    font-size: 35px;
+}
