@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import PoemComponent from "./components/Poem";
 import { Poem } from "./types/Poem";
-import styles from "./App.css";
+import "./App.css";
 
 function App() {
   const poems: Poem[] = [
@@ -62,16 +62,56 @@ function App() {
       text: "And if you choose to sing the blues \n Ignore he who here lays \n Atrophied, bereft of use \n Oh honey, I'm living in the come down grays. \n And if it's true they'll say to you \n Save yourself its here to stay \n So save yourself because it's true  \n Oh honey, I'm coming down a little gray. \n I'm yet to rise to then descend again \n You're yet to look upon my grave  \n In living form I'm dead my friend \n Oh honey, there's nothing left of me but gray. \n And still you sing that song you sung \n And still you try and try in vain \n Eluded still by goings on \n Oh honey, face up I've drowned in rain.",
     },
   ];
+  const [label, setLabel] = useState("Click Me");
+  const [count, setCount] = useState(0);
+  const [showToc, setShowToc] = useState(false);
+
+  const someFunc = () => {
+    setCount((previousCountState) => {
+      return (previousCountState = previousCountState + 1);
+    });
+  };
+
+  useEffect(() => {
+    // Set label startsS
+    setLabel((previousLabelState) => {
+      let myString: string = "Click Me";
+
+      if (previousLabelState === "Click Me") {
+        myString = "Dont Click Me";
+      }
+      if (previousLabelState === "Dont Click Me") {
+        myString = "Click Me";
+      }
+      if (count !== 0 && count % 3 === 0) {
+        myString = "Hold on dude!";
+      }
+      if (count !== 0 && count % 9 === 0) {
+        myString = "Ok You can come in";
+      }
+
+      return myString;
+    });
+    if (count !== 0 && count % 9 === 0) {
+      setShowToc((previousShowState) => {
+        console.log(previousShowState);
+        return !previousShowState;
+      });
+    }
+  }, [count]);
+
   return (
     <div>
-      <h1 className={styles.h1}>A Handful of Poetry</h1>
-      <h2 className={styles.h2}>The Santiagetti Collection.</h2>
+      <p className="p">{count}</p>
+      <h1 className="h1">A Handful of Poetry</h1>
+      <h2 className="h2">The Santiagetti Collection.</h2>
       {poems.map((poem) => {
         return (
           <PoemComponent
             title1={poem.title1}
             title2={poem.title2}
             text={poem.text}
+            stanza={poem.stanza}
           />
         );
       })}

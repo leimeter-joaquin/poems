@@ -1,7 +1,7 @@
 import { Poem } from "../../types/Poem";
 import styles from "./styles.module.css";
 
-const PoemComponent = ({ title1, title2, text }: Poem) => {
+const PoemComponent = ({ title1, title2, text, stanza }: Poem) => {
   return (
     <div>
       <h3 className={styles.h3}>{title1}</h3>
@@ -11,6 +11,9 @@ const PoemComponent = ({ title1, title2, text }: Poem) => {
           return <p>{p}</p>;
         })}
       </p>
+      <ul>
+        <li className={styles.li}>{stanza}</li>
+      </ul>
     </div>
   );
 };
